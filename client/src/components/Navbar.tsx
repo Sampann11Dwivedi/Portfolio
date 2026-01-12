@@ -18,7 +18,10 @@ export function Navbar() {
   const isActive = (path: string) => location === path;
 
   // Smooth scroll handler
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    id: string,
+  ) => {
     e.preventDefault();
     const element = document.querySelector(id);
     if (element) {
@@ -35,9 +38,11 @@ export function Navbar() {
             <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
               <Code2 className="text-white w-5 h-5" />
             </div>
-            <span className="font-display font-bold text-xl tracking-tight">Sampann.dev</span>
+            <span className="font-display font-bold text-xl tracking-tight">
+              Sampann Dwivedi
+            </span>
           </div>
-          
+
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
@@ -51,13 +56,29 @@ export function Navbar() {
                 </a>
               ))}
               <div className="flex items-center space-x-2 pl-4 border-l border-border/50">
-                <a href="https://github.com/Sampann11Dwivedi" target="_blank" rel="noopener noreferrer">
-                  <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground">
+                <a
+                  href="https://github.com/Sampann11Dwivedi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8 text-muted-foreground hover:text-foreground"
+                  >
                     <Github className="h-4 w-4" />
                   </Button>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground">
+                <a
+                  href="https://www.linkedin.com/in/sampann-dwivedi-61218134a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8 text-muted-foreground hover:text-foreground"
+                  >
                     <Linkedin className="h-4 w-4" />
                   </Button>
                 </a>
@@ -72,7 +93,11 @@ export function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className="text-muted-foreground"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
