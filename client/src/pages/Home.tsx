@@ -4,7 +4,7 @@ import { TechStack } from "@/components/TechStack";
 import { ContactForm } from "@/components/ContactForm";
 import { useProjects } from "@/hooks/use-projects";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Code, Github, Sparkles } from "lucide-react";
+import { ArrowDown, Code, Github, Linkedin, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -122,6 +122,9 @@ export default function Home() {
           <div className="flex gap-6">
             <a href="https://github.com/Sampann11Dwivedi" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Github className="w-5 h-5" />
+            </a>
+            <a href="https://www.linkedin.com/in/sampann-dwivedi-61218134a/" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin className="w-5 h-5" />
             </a>
             {/* Add more social links here */}
           </div>

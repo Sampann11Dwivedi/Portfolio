@@ -19,6 +19,14 @@ async function seedDatabase() {
         isFeatured: true
       },
       {
+        title: "STREET HOUSE",
+        description: "Developed and deployed a modern, responsive website for STREET-HOUSE, an architecture and design studio. Built performance-optimized frontend and backend systems, integrated on-page SEO strategies to enhance visibility and user experience.",
+        link: "#", // Assuming no public link provided yet or use the portfolio link if intended
+        category: "Web Development",
+        techStack: ["React", "SEO", "Responsive Design"],
+        isFeatured: false
+      },
+      {
         title: "Easy Variant Swatches",
         description: "A customizable swatch solution to enhance how product variants are displayed on storefronts. Owned entire backend: routes, middleware, controllers, DB design.",
         link: "https://apps.shopify.com/easy-variant-swatches",
