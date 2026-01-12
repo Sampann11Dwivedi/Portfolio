@@ -4,7 +4,7 @@ import { TechStack } from "@/components/TechStack";
 import { ContactForm } from "@/components/ContactForm";
 import { useProjects } from "@/hooks/use-projects";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Code, Sparkles } from "lucide-react";
+import { ArrowDown, Code, Github, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
