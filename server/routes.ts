@@ -93,9 +93,9 @@ export async function registerRoutes(
           });
 
           await transporter.sendMail({
-            from: process.env.EMAIL_USER,
+            from: input.email,
             to: process.env.EMAIL_USER, // Send to self
-            subject: `New Portfolio Message from ${input.name}`,
+            subject: `New Collabrator Message from ${input.name}`,
             text: `
 Name: ${input.name}
 Email: ${input.email}
