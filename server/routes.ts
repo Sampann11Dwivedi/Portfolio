@@ -5,6 +5,7 @@ import { api } from "@shared/routes";
 import { z } from "zod";
 import { db } from "./db";
 import { projects } from "@shared/schema";
+import nodemailer from "nodemailer";
 
 async function seedDatabase() {
   const existingProjects = await storage.getProjects();
@@ -79,6 +80,37 @@ export async function registerRoutes(
     try {
       const input = api.messages.create.input.parse(req.body);
       const message = await storage.createMessage(input);
+
+      // Send email notification
+      if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+        try {
+          const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
+            },
+          });
+
+          await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER, // Send to self
+            subject: `New Portfolio Message from ${input.name}`,
+            text: `
+Name: ${input.name}
+Email: ${input.email}
+
+Message:
+${input.message}
+            `,
+          });
+          console.log("Email notification sent");
+        } catch (emailErr) {
+          console.error("Failed to send email notification:", emailErr);
+          // Continue execution, do not fail the request
+        }
+      }
+
       res.status(201).json(message);
     } catch (err) {
       if (err instanceof z.ZodError) {
