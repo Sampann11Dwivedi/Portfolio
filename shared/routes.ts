@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { insertMessageSchema, projects, messages } from './schema';
 
+const API_BASE = "https://portfolio--dwivedikevin.replit.app";
+
 export const errorSchemas = {
   validation: z.object({
     message: z.string(),
@@ -38,7 +40,7 @@ export const api = {
 };
 
 export function buildUrl(path: string, params?: Record<string, string | number>): string {
-  let url = path;
+  let url = API_BASE + path;
   if (params) {
     Object.entries(params).forEach(([key, value]) => {
       if (url.includes(`:${key}`)) {

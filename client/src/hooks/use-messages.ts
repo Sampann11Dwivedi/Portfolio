@@ -2,6 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import { api } from "@shared/routes";
 import { type MessageInput } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
+import { buildUrl } from "@shared/routes";
 
 export function useSendMessage() {
   const { toast } = useToast();
@@ -9,7 +10,7 @@ export function useSendMessage() {
   return useMutation({
     mutationFn: async (data: MessageInput) => {
       const validated = api.messages.create.input.parse(data);
-      const res = await fetch(api.messages.create.path, {
+      const res = await fetch(buildUrl(api.messages.create.path), {
         method: api.messages.create.method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(validated),
