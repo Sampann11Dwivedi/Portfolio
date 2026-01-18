@@ -222,6 +222,78 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section id="about" className="py-24">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-display font-bold mb-6"
+          >
+           <span className="text-gradient">Web & Shopify Developer in Kota</span>
+          </motion.h1>
+
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            I’m <span className="text-foreground font-semibold">Sampann Dwivedi</span>
+            , a professional <span className="text-foreground font-semibold"> Web Developer in Kota</span> and <span className="text-foreground font-semibold">Shopify Certified Developer</span>, officially certified by Shopify, helping businesses build fast, scalable, and SEO-friendly digital products across India.
+          </p>
+        </div>
+      </section>
+
+      {/* About Content */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto space-y-14">
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              <span className="text-gradient">Web Developer in Kota</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              As a dedicated <strong>Web Developer in Kota</strong>, I build modern
+              websites and web applications focused on performance, clean architecture,
+              and long-term scalability. I work with React, modern frontend tools,
+              and robust backend systems to deliver production-ready solutions.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              <span className="text-gradient">Shopify Developer in Kota</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              I work as a <strong>Shopify Developer in Kota</strong>, helping brands
+              launch, customize, and scale their e-commerce stores. My experience
+              includes Shopify theme development, advanced customization, and
+              Shopify app development used by real businesses.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              <span className="text-gradient">Shopify Developer in India</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Beyond local projects, I collaborate with startups and companies as a
+              <strong> Shopify Developer in India</strong>, delivering scalable
+              e-commerce solutions that meet national and international standards.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-3">
+              <span className="text-gradient">My Approach</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              I believe in solving real problems through clean code, thoughtful
+              system design, and clear communication. Whether it’s a high-traffic
+              website or a complex Shopify app, my focus is always on performance,
+              maintainability, and business value.
+            </p>
+          </div>
+
+        </div>
+      </section>
       {/* Contact Section */}
       <ContactForm />
 
