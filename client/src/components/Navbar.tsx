@@ -17,18 +17,29 @@ export function Navbar() {
 
   const isActive = (path: string) => location === path;
 
-  // Smooth scroll handler
-  const handleScroll = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    id: string,
-  ) => {
-    e.preventDefault();
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
-  };
+const handleScroll = (
+  e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  id: string
+) => {
+  e.preventDefault();
+
+  setIsOpen(false); // menu close first
+
+  const element = document.querySelector(id);
+  if (!element) return;
+
+  const navbarHeight = 64; // h-16
+  const elementPosition =
+    element.getBoundingClientRect().top + window.scrollY;
+
+  // delay to allow menu collapse animation
+  setTimeout(() => {
+    window.scrollTo({
+      top: elementPosition - navbarHeight,
+      behavior: "smooth",
+    });
+  }, 200); // 200ms is good
+};
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -39,12 +50,19 @@ export function Navbar() {
               <Code2 className="text-white w-5 h-5" />
             </div>
             <span className="font-display font-bold text-xl tracking-tight">
-              Sampann Production
+              
+                <a href="#home"
+                    onClick={(e) => handleScroll(e, "#home")}
+                        className="hover:text-primary transition-colors"
+
+>
+                  Sampann Production 
+                </a>
             </span>
           </div>
 
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className=" ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
                 <a
                   key={link.label}

@@ -34,7 +34,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-10" />
 
       {/* 3D Scene Layer */}
-      <div className="absolute inset-0 z-20">
+      <div className="absolute inset-0 z-10 pointer-events-none">
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Suspense fallback={null}>
             <CelestialSphere />
