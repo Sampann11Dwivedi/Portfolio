@@ -71,8 +71,7 @@ export default function Home() {
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
               Hey, I’m{" "}
               <span className="text-foreground font-semibold">Sampann</span> – a
-              Web Developer blending powerful backends with clean UI. I
-              specialize in custom Shopify apps that actually scale. 💻🚀
+                       Senior Software Engineer building scalable websites, web applications, and backend systems with a strong focus on performance and clean architecture. I work across the full stack — from designing reliable APIs and business logic to crafting fast, user-friendly interfaces.I’ve built and worked on production-ready products including marketing websites, custom dashboards, web platforms, and Shopify applications used by real businesses. My approach is practical: understand the problem, design systems that scale, and deliver clean, maintainable code.Whether it’s a high-traffic website or a complex application, I build software that’s meant to last.🚀
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
