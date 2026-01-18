@@ -6,6 +6,12 @@ import { useProjects } from "@/hooks/use-projects";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Code, Github, Linkedin, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import Spline from '@/components/spline';
+import { Canvas } from "@react-three/fiber";
+import { CelestialSphere } from "@/components/canvas/CelestialSphere";
+import heroBg from "@/components/images/deep_space_nebula_background_with_gold_and_purple_hues.png";
+import { Suspense } from "react";
+
 
 export default function Home() {
   const { data: projects, isLoading } = useProjects();
@@ -13,12 +19,29 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Navbar />
+            {/* Background Image Layer */}
+
 
       {/* Hero Section */}
       <section
         id="home"
         className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 overflow-hidden"
       >
+              <div 
+        className="absolute inset-0 bg-cover bg-center z-0 opacity-60"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-10" />
+
+      {/* 3D Scene Layer */}
+      <div className="absolute inset-0 z-20">
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <Suspense fallback={null}>
+            <CelestialSphere />
+          </Suspense>
+        </Canvas>
+      </div>
+
         {/* Abstract Background Shapes */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
           <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-600/20 rounded-full blur-[120px]" />

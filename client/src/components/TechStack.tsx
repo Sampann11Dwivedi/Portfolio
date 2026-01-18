@@ -9,6 +9,8 @@ import {
   Globe,
   ShoppingBag,
 } from "lucide-react";
+import Spline from "@/components/spline";
+
 
 export function TechStack() {
   const container = {
@@ -38,7 +40,7 @@ export function TechStack() {
             robust, scalable solutions.
           </p>
         </div>
-
+        <Spline />
         <motion.div
           variants={container}
           initial="hidden"
