@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { TechStack } from "@/components/TechStack";
 import { ContactForm } from "@/components/ContactForm";
-import { useProjects } from "@/hooks/use-projects";
+// import { useProjects } from "@/hooks/use-projects";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Code, Github, Linkedin, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
@@ -14,7 +14,179 @@ import { Suspense } from "react";
 
 
 export default function Home() {
-  const { data: projects, isLoading } = useProjects();
+//   const { data: projects, isLoading } = useProjects();
+    let isLoading = false;
+    let projects = [
+  {
+    "id": 1,
+    "title": "Shopify Bundles App",
+    "description": "A Shopify app that lets merchants create product bundles that apply at checkout. Using Shopify Functions and Cart Transform, this app automatically adds add-on products when a target product is purchased.",
+    "link": "https://github.com/Sampann11Dwivedi/shopify-bundles-app",
+    "techStack": [
+      "React",
+      "Shopify API",
+      "Node.js",
+      "GraphQL",
+      "Shopify Liquid",
+      "Polaris",
+      "Shopify plus",
+      "Shopify Customization",
+      "SQLITE"
+    ],
+    "isFeatured": true,
+    "category": "Shopify App",
+    "imageUrl": null
+  },
+  {
+    "id": 2,
+    "title": "Easy Variant Swatches",
+    "description": "A customizable swatch solution to enhance how product variants are displayed on storefronts. Owned entire backend: routes, middleware, controllers, DB design.",
+    "link": "https://apps.shopify.com/easy-variant-swatches",
+    "techStack": [
+      "Laravel",
+      "Theme App Extension",
+      "MySQL",
+      "Metafields",
+      "Blade",
+      "GraphQL",
+      "RabbitMQ",
+      "OAuth"
+    ],
+    "isFeatured": false,
+    "category": "Shopify App",
+    "imageUrl": null
+  },
+  {
+    "id": 3,
+    "title": "SpiceGems Store Locator",
+    "description": "Allows merchants to show physical store locations on their site with search and filters. Built robust import/export and JWT-based session auth.",
+    "link": "https://apps.shopify.com/easy-store-locator-2",
+    "techStack": [
+      "React",
+      "Laravel",
+      "Google Maps API",
+      "Polaris",
+      "Metafields",
+      "JWT",
+      "Shopify",
+      "Theme App Extension",
+      "GraphQL",
+      "MYSQL"
+    ],
+    "isFeatured": false,
+    "category": "Shopify App",
+    "imageUrl": null
+  },
+  {
+    "id": 4,
+    "title": "EPA – Easy Product Addons",
+    "description": "Lets merchants add custom add-ons to product pages (checkboxes, text inputs, uploads). Architected scalable backend using Laravel.",
+    "link": "https://apps.shopify.com/spice-product-add-ons",
+    "techStack": [
+      "Laravel",
+      "Metafields",
+      "File Uploads",
+      "Theme App Extension",
+      "MySQL",
+      "Blade",
+      "GraphQL",
+      "REST",
+      "MYSQL"
+    ],
+    "isFeatured": false,
+    "category": "Shopify App",
+    "imageUrl": null
+  },
+  {
+    "id": 5,
+    "title": "Shopify Cart Progress Bar",
+    "description": "A sticky cart progress bar for Shopify, encouraging customers to reach a goal (e.g., free shipping) and optionally showing a discount code.",
+    "link": "https://github.com/Sampann11Dwivedi/shopify-cart-progress-bar",
+    "techStack": [
+      "Liquid",
+      "Javascript",
+      "Css"
+    ],
+    "isFeatured": true,
+    "category": "Shopify Theme Snippets",
+    "imageUrl": null
+  },
+  {
+    "id": 6,
+    "title": "AI-Powered Recipe Intelligence System",
+    "description": "Integrated Mistral AI API to experiment with recipe and ingredient-based responses. Focused on consuming, parsing, and evaluating AI-generated outputs to explore smart dish suggestion workflows and practical AI integration.",
+    "link": "https://github.com/Sampann11Dwivedi/AI-Powered-Recipe-Recommendation",
+    "techStack": [
+      "React",
+      "Javascript",
+      "Mistral AI"
+    ],
+    "isFeatured": true,
+    "category": "React App",
+    "imageUrl": null
+  },
+  {
+    "id": 7,
+    "title": "Task Management System",
+    "description": "A simple task management system built with Laravel and jQuery, featuring JWT authentication and CRUD operations with pagination and filtering",
+    "link": "https://github.com/Sampann11Dwivedi/mini-task-management",
+    "techStack": [
+      "Laravel",
+      "JWT",
+      "Blade",
+      "Javascript",
+      "MYSQL"
+    ],
+    "isFeatured": true,
+    "category": "Laravel App",
+    "imageUrl": null
+  },
+  {
+    "id": 8,
+    "title": "Meme Generator",
+    "description": "A React-based app that lets users generate custom memes by dynamically updating text and rendering images from a meme API.",
+    "link": "https://github.com/Sampann11Dwivedi/Meme-Generator",
+    "techStack": [
+      "React",
+      "Javascript",
+      "imgflip API"
+    ],
+    "isFeatured": true,
+    "category": "React App",
+    "imageUrl": null
+  },
+  {
+    "id": 9,
+    "title": "Tour App",
+    "description": "Full-stack travel app allowing users to log travel history, plan trips, and track journeys with real-time data synchronization.",
+    "link": "https://github.com/Sampann11Dwivedi/Tour-App",
+    "techStack": [
+      "React",
+      "Javascript",
+      "MongoDB",
+      "Express.js"
+    ],
+    "isFeatured": true,
+    "category": "Full Stack",
+    "imageUrl": null
+  },
+  {
+    "id": 10,
+    "title": "Inventory Management Project",
+    "description": "A complete Java GUI + MySQL-based application using AWT, with login, role-based access, data insertion, and viewing capabilities. That's pretty cool and shows solid understanding of GUI programming, JDBC, and database handling.",
+    "link": "https://github.com/Sampann11Dwivedi/Inventory-Management-Project",
+    "techStack": [
+      "Java",
+      "MySQL",
+      "GUI",
+      "AWT"
+    ],
+    "isFeatured": true,
+    "category": "Java App",
+    "imageUrl": null
+  }
+];
+
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
